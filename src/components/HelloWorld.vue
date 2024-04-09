@@ -26,9 +26,6 @@ const switchCondition = () => {
   </div>
   <div>
   
-        <button class="me-4" @click="logJSON">
-        logJSON 
-      </button>
       <button @click="switchCondition">
         switchCondition
       </button>

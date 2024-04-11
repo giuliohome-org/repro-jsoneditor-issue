@@ -50,7 +50,10 @@ const updatedContent = (myupdate: any) => {
       
           <div v-if="switchMe" > read only</div> 
           <JsonEditorVue v-else v-model="myJSON" :onChange="updatedContent" />
+          <h3>type</h3>
           <span>{{ typeof(myJSON) }}</span> 
+          <h3>content</h3>
+          <span>{{ myJSON }}</span> 
           
   </div>
 </template>

@@ -15,9 +15,10 @@ const printJSON = () => {
   console.log(typeof(myJSON.value))
 }
 const updatedContent = (myupdate: any) => {
-  console.log("my update", myupdate);
+  console.debug("textual update", myupdate);
   myupdate.json = JSON.parse(myupdate.text);
   myupdate.text = undefined
+  console.debug("parsed update", myupdate.json);
 }
 
 </script>

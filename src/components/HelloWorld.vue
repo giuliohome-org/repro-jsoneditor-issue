@@ -14,6 +14,11 @@ const switchCondition = () => {
 const printJSON = () => {
   console.log(typeof(myJSON.value))
 }
+const updatedContent = (myupdate: any) => {
+  console.log("my update", myupdate);
+  myupdate.json = JSON.parse(myupdate.text);
+  myupdate.text = undefined
+}
 
 </script>
 
@@ -34,7 +39,7 @@ const printJSON = () => {
       <button @click="printJSON">printJSON</button>
       
           <div v-if="switchMe" > read only</div> 
-          <JsonEditorVue v-else v-model="myJSON" />
+          <JsonEditorVue v-else v-model="myJSON" :onChange="updatedContent" />
           <span>{{ typeof(myJSON) }}</span> 
           
   </div>

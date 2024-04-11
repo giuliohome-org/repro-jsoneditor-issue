@@ -16,8 +16,17 @@ const printJSON = () => {
 }
 const updatedContent = (myupdate: any) => {
   console.debug("textual update", myupdate);
-  myupdate.json = JSON.parse(myupdate.text);
-  myupdate.text = undefined
+  if (myupdate.text !== "") {
+    try {
+      myupdate.json = JSON.parse(myupdate.text);
+    } catch {
+      console.debug("json is not valid: do nothing");
+      return;
+    }
+  } else {
+    myupdate.json = {};
+  }
+  myupdate.text = undefined;
   console.debug("parsed update", myupdate.json);
 }
 

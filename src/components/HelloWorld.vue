@@ -11,7 +11,9 @@ const switchMe = ref(false)
 const switchCondition = () => {
 	switchMe.value = !switchMe.value
 }
-
+const printJSON = () => {
+  console.log(typeof(myJSON.value))
+}
 
 </script>
 
@@ -29,9 +31,11 @@ const switchCondition = () => {
       <button @click="switchCondition">
         switchCondition
       </button>
+      <button @click="printJSON">printJSON</button>
       
           <div v-if="switchMe" > read only</div> 
-          <JsonEditorVue v-else v-model="myJSON" /> 
+          <JsonEditorVue v-else v-model="myJSON" />
+          <span>{{ typeof(myJSON) }}</span> 
           
   </div>
 </template>

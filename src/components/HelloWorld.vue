@@ -12,7 +12,8 @@ const switchCondition = () => {
 	switchMe.value = !switchMe.value
 }
 const printJSON = () => {
-  console.log(typeof(myJSON.value))
+  console.log("type: ",typeof(myJSON.value))
+  console.log("value: ", myJSON.value)
 }
 
 </script>
